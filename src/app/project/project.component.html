@@ -1,0 +1,64 @@
+<div>
+  <h2>Gestion des Projets</h2>
+
+  <!-- Recherche -->
+  <div>
+    <label>Rechercher par :</label>
+    <select [(ngModel)]="searchBy">
+      <option value="all">Tous</option>
+      <option value="titre">Titre</option>
+      <option value="date">Date</option>
+    </select>
+    <input type="text" [(ngModel)]="searchValue" placeholder="Valeur de recherche" />
+    <button (click)="fetchProjects()">Rechercher</button>
+  </div>
+
+  <!-- Formulaire pour créer / mettre à jour -->
+  <form (ngSubmit)="formProject.id ? updateProject() : createProject()">
+    <label>Titre :</label>
+    <input type="text" [(ngModel)]="formProject.titre" name="titre" required />
+
+    <label>Date :</label>
+    <input type="date" [(ngModel)]="formProject.date" name="date" required />
+
+    <label>Humidité Max :</label>
+    <input type="number" [(ngModel)]="formProject.humMax" name="humMax" required />
+
+    <label>Température Max :</label>
+    <input type="number" [(ngModel)]="formProject.tempMax" name="tempMax" required />
+
+    <label>Pompe State :</label>
+    <input type="number" [(ngModel)]="formProject.pompeSt" name="pompeSt" required />
+
+    <button type="submit">{{ formProject.id ? 'Mettre à jour' : 'Créer' }}</button>
+  </form>
+
+  <!-- Liste des projets -->
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titre</th>
+      <th>Date</th>
+      <th>Humidité Max</th>
+      <th>Température Max</th>
+      <th>Pompe State</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{ project.id }}</td>
+      <td>{{ project.titre }}</td>
+      <td>{{ project.date }}</td>
+      <td>{{ project.humMax }}</td>
+      <td>{{ project.tempMax }}</td>
+      <td>{{ project.pompeSt }}</td>
+      <td>
+        <button (click)="editProject(project)">Modifier</button>
+        <button (click)="deleteProject(project.id)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

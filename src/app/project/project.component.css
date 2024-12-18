@@ -1,0 +1,179 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Container styles */
+div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styles */
+h2 {
+  text-align: center;
+  color: limegreen;
+  margin-bottom: 20px;
+}
+
+/* Search section */
+div > div:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+div > div:first-of-type label {
+  font-weight: bold;
+}
+
+div > div:first-of-type select,
+div > div:first-of-type input[type="text"],
+div > div:first-of-type button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+div > div:first-of-type select:focus,
+div > div:first-of-type input:focus,
+div > div:first-of-type button:focus {
+  border-color: limegreen;
+  box-shadow: 0 0 5px limegreen;
+}
+
+div > div:first-of-type button {
+  background-color: limegreen;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+div > div:first-of-type button:hover {
+  background-color: limegreen;
+}
+
+/* Form section */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+form label {
+  font-weight: bold;
+  width: 100px;
+}
+
+form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: limegreen;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: greenyellow;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color:limegreen;
+  color: #fff;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+table button {
+  font-size: 14px;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+table button:first-of-type {
+  background-color: limegreen;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+table button:first-of-type:hover {
+  background-color: #218838;
+}
+
+table button:last-of-type {
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+table button:last-of-type:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+  }
+
+  form input,
+  form button {
+    width: 100%;
+  }
+
+  div > div:first-of-type {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
