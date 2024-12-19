@@ -1,0 +1,24 @@
+<header class="header-container">
+    <div class="header-logo">
+        <h1>MyApp</h1> <!-- Replace with your logo -->
+    </div>
+    <nav class="header-nav">
+        <ul>
+            <li><a routerLink="Project">Project</a></li>
+            <li><a routerLink="/about">Biologist</a></li>
+            <li><a routerLink="/contact">Admin</a></li>
+        </ul>
+    </nav>
+    <div class="header-actions">
+        <!-- If user is logged in -->
+        <div *ngIf="isLoggedIn" class="user-info">
+            <span>Welcome, {{ userName }}</span>
+            <button (click)="logout()">Logout</button>
+        </div>
+
+        <!-- If user is not logged in -->
+        <div *ngIf="!isLoggedIn">
+            <a routerLink="signup" class="login-link">Sigup</a>
+        </div>
+    </div>
+</header>
